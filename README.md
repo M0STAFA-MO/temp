@@ -1,38 +1,87 @@
-=================================================
+╔════════════════════════════════════════════════╗
 
-WORLD WAR II WEATHER ANALYSIS
+║ WWII WEATHER ANALYSIS & TEMPERATURE PREDICTION ║
 
-=================================================
+╚════════════════════════════════════════════════╝
 
-★★★★★ KEY FEATURES ★★★★★
+✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦
 
-✔ Data merging & cleaning
+  KEY FEATURES                             
+  
+✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦
 
-✔ Coordinate processing
+✔ Merged 2 historical datasets (weather + stations)
 
-✔ ML model comparison
+✔ Processed 100K+ records with Pandas
 
-✔ Interactive visualization
+✔ Engineered location features using Regex 
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+✔ Compared ML models: 47.55% vs 96.20% R² 
 
-TOP MODELS:
+✔ Built interactive temperature map with Folium    
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-- Linear Regression: 47.55% 
-- 
-- Random Forest: 96.20% 
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  TOP PERFORMERS 
+  
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 
-GET STARTED:
+  MODEL                ACCURACY    SPEED      
+  
+══════════════════════════════════════════════
 
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 
-python main.py
 
-★★★★★ CONTACT ★★★★★
+  Random Forest ★★★    96.20%      Moderate (38s)
 
-Email: mostafaelmenwary@gmail.com
+██████████████████████████████████████████████
 
-Kaggle: https://www.kaggle.com/code/mostafaelmenwary/tempera
+  CODE HIGHLIGHTS
+  
+██████████████████████████████████████████████
+
+[ DATA MERGE ]
+
+wea = pd.merge(weather, stations, 
+
+               left_on='STA', right_on='WBAN')
+
+[ COORD PROCESSING ]
+
+wea['lat_dir'] = wea['LAT'].str.extract(r'(\d+)([NS])')[1]
+
+[ RANDOM FOREST ]
+
+model = RandomForestRegressor(n_estimators=100)
+
+model.fit(X_train, y_train)
+
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+  GET STARTED                             
+  
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+
+
+Clone repository:
+
+   git clone https://github.com/yourrepo/ww2-weather
+
+ Run analysis:
+ 
+   python analyze_weather.py
+
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+
+  SUPPORT & FEEDBACK  
+  
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+
+First Kaggle project! ★彡  
+
+→ Found issues? Open GitHub ticket  
+
+→ Like it? Upvote on Kaggle: [[shortened.link](https://www.kaggle.com/code/mostafaelmenwary/tempera)]  
+
+→ Questions? Email: mostafaelmenwary@gmail.com
