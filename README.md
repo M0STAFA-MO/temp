@@ -1,45 +1,55 @@
-WORLD WAR II WEATHER ANALYSIS & TEMPERATURE PREDICTION
-A machine learning project analyzing historical weather patterns to predict mean temperatures using WWII-era data.
+╔════════════════════════════════════════════════╗
+║  WWII WEATHER ANALYSIS & TEMPERATURE PREDICTION ║
+╚════════════════════════════════════════════════╝
 
-KEY FEATURES:
+✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦
+  KEY FEATURES                             
+✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦
+✔ Merged 2 historical datasets (weather + stations)
+✔ Processed 100K+ records with Pandas              
+✔ Engineered location features using Regex        
+✔ Compared ML models: 47.55% vs 96.20% R²         
+✔ Built interactive temperature map with Folium    
 
-Merged weather measurements with station location data
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+  TOP PERFORMERS                          
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+  MODEL                ACCURACY    SPEED      
+══════════════════════════════════════════════
+  Linear Regression     47.55%      Fast (2s) 
+──────────────────────────────────────────────
+  Random Forest ★★★    96.20%      Moderate (38s)
 
-Processed coordinates (latitude/longitude) using regex
+██████████████████████████████████████████████
+  CODE HIGHLIGHTS                         
+██████████████████████████████████████████████
+[ DATA MERGE ]
+wea = pd.merge(weather, stations, 
+               left_on='STA', right_on='WBAN')
 
-Converted categorical data via Label Encoding
+[ COORD PROCESSING ]
+wea['lat_dir'] = wea['LAT'].str.extract(r'(\d+)([NS])')[1]
 
-Compared Linear Regression vs. Random Forest models
-
-Interactive geographic visualization of temperatures
-
-TOP RESULTS:
-
-Linear Regression achieved 47.55% R² accuracy
-
-Random Forest achieved 96.20% R² accuracy (best model)
-
-CORE CODE SNIPPETS:
-
-Data Merging:
-wea = pd.merge(weather_data, station_locations, left_on='STA', right_on='WBAN')
-
-Coordinate Processing:
-wea['lat_direction'] = wea['LAT'].str.extract(r'(\d+)([A-Za-z]+)')[1]
-
-Model Training:
-model = RandomForestRegressor(n_estimators=100, random_state=42)
+[ RANDOM FOREST ]
+model = RandomForestRegressor(n_estimators=100)
 model.fit(X_train, y_train)
 
-HOW TO RUN:
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+  GET STARTED                             
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+1. Install requirements:
+   pip install pandas scikit-learn folium
 
-Install requirements: pip install pandas scikit-learn folium
+2. Clone repository:
+   git clone https://github.com/yourrepo/ww2-weather
 
-Clone repo: git clone https://github.com/yourusername/ww2-weather
+3. Run analysis:
+   python analyze_weather.py
 
-Execute: python main.py
-
-FEEDBACK WELCOME!
-This is my first Kaggle notebook - suggestions welcome!
-Like this work? Please upvote on Kaggle: [kaggle.com/yournotebook]
-Full code: [github.com/yourrepo]
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+  SUPPORT & FEEDBACK                    
+♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
+First Kaggle project! ★彡  
+→ Found issues? Open GitHub ticket  
+→ Like it? Upvote on Kaggle: [https://www.kaggle.com/code/mostafaelmenwary/tempera]  
+→ Questions? Email: you@example.com  
