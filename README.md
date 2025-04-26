@@ -1,10 +1,11 @@
 ╔════════════════════════════════════════════════╗
-║  WWII WEATHER ANALYSIS & TEMPERATURE PREDICTION ║
+║ WWII WEATHER ANALYSIS & TEMPERATURE PREDICTION ║
 ╚════════════════════════════════════════════════╝
 
 ✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦
-  KEY FEATURES                             
+KEY FEATURES                             
 ✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦
+
 ✔ Merged 2 historical datasets (weather + stations)
 ✔ Processed 100K+ records with Pandas              
 ✔ Engineered location features using Regex        
@@ -52,4 +53,4 @@ model.fit(X_train, y_train)
 First Kaggle project! ★彡  
 → Found issues? Open GitHub ticket  
 → Like it? Upvote on Kaggle: [https://www.kaggle.com/code/mostafaelmenwary/tempera]  
-→ Questions? Email: you@example.com  
+→ Questions? Email: mostafaelmenwary@gmail.com
