@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════╗
 
-║ WWII WEATHER ANALYSIS & TEMPERATURE PREDICTION ║
+║ WWII WEATHER ANALYSIS & TEMPERATURE PREDICTION   ║
 
 ╚════════════════════════════════════════════════╝
 
@@ -31,46 +31,14 @@
 ══════════════════════════════════════════════
 
 
-
-  Random Forest ★★★    96.20%      Moderate (38s)
+Random Forest ★★★    96.20%      Moderate (38s)
 
 ██████████████████████████████████████████████
-
-  CODE HIGHLIGHTS
-  
-██████████████████████████████████████████████
-
-[ DATA MERGE ]
-
-wea = pd.merge(weather, stations, 
-
-               left_on='STA', right_on='WBAN')
-
-[ COORD PROCESSING ]
-
-wea['lat_dir'] = wea['LAT'].str.extract(r'(\d+)([NS])')[1]
-
-[ RANDOM FOREST ]
-
-model = RandomForestRegressor(n_estimators=100)
-
-model.fit(X_train, y_train)
-
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-
-  GET STARTED                             
-  
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-
 
 
 Clone repository:
 
-   git clone https://github.com/yourrepo/ww2-weather
-
- Run analysis:
- 
-   python analyze_weather.py
+   git clone [https://github.com/yourrepo/ww2-weather](https://github.com/M0STAFA-MO/temp.git)
 
 ♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡♡
 
@@ -84,4 +52,4 @@ First Kaggle project! ★彡
 
 → Like it? Upvote on Kaggle: [[shortened.link](https://www.kaggle.com/code/mostafaelmenwary/tempera)]  
 
-→ Questions? Email: mostafaelmenwary@gmail.com
+→ Questions? Email:   [[shortened.link](mostafaelmenwary@gmail.com)]  
